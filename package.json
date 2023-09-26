@@ -4,8 +4,9 @@
   "description": "FullTestcasesofMoolWebsite",
   "main": "index.js",
   "scripts": {
-    "test": "test",
-    "cypress:open": "cypress open",
+    "test": "node_modules\\.bin\\cypress run",
+    "runtest": "npx cypress run",
+    "cypress:open": "npx cypress open",
     "cypress:rundefault": "cypress run --spec cypress/e2e/*.cy.js",
     "cypress:chrome": "cypress run --browser chrome --spec cypress/e2e/*.cy.js",
     "cypress:edge": "cypress run --browser edge --spec cypress/e2e/*.cy.js"

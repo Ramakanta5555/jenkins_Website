@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-16T08:01:27.795Z",
+    "end": "2023-10-16T08:01:46.674Z",
+    "duration": 18879,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cd295ad6-f477-46fe-b37c-a2e98ea91eb5",
+      "title": "",
+      "fullFile": "cypress/e2e/landingPage.cy.js",
+      "file": "cypress/e2e/landingPage.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ee861c0e-0b5c-46ce-bab4-ba8ed3ae7ded",
+          "title": "Website",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "The all links should work properly",
+              "fullTitle": "Website The all links should work properly",
+              "timedOut": null,
+              "duration": 11978,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').each(link => {\n  if (link.prop('href')) {\n    cy.request({\n      url: link.prop('href'),\n      failOnStatusCode: false,\n      timeout: 10000\n    });\n    cy.log(link.prop('href'));\n  }\n});",
+              "err": {},
+              "uuid": "b5d5c0a5-ae07-46a7-8202-973936bd4ba1",
+              "parentUUID": "ee861c0e-0b5c-46ce-bab4-ba8ed3ae7ded",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "check the images on dashboard visibility",
+              "fullTitle": "Website check the images on dashboard visibility",
+              "timedOut": null,
+              "duration": 5840,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const dashboardPageobj = new _dashboardPage.default();\ndashboardPageobj.moolLogo1.should('be.visible');\ndashboardPageobj.forIndivisualHeroSection.realHover('mouse');\ncy.get(`body > div:nth-child(2) > div:nth-child(2) > main:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h4:nth-child(1) > div:nth-child(2)`).should('be.visible');\ndashboardPageobj.forEnterpriseHeroSection.realHover('mouse');\ncy.get(`body > div:nth-child(2) > div:nth-child(2) > main:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > h4:nth-child(1) > div:nth-child(2)`).should('be.visible');\ndashboardPageobj.forTaxProfessionalHeroSection.realHover('mouse');\ncy.get(`body > div:nth-child(2) > div:nth-child(2) > main:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > h4:nth-child(1) > div:nth-child(2)`).should('be.visible');\ndashboardPageobj.heroSectionSwiper.should('be.visible');\ndashboardPageobj.taxPlanningFY202324.invoke('removeAttr', 'target').click();\ncy.url().should('eq', 'https://www.jann.moolfinance.com/assistedITR');\ncy.go('back');\ndashboardPageobj.apiSandboxForEnterprise.invoke('removeAttr', 'target').click();\ncy.url().should('eq', 'https://www.moolfinance.com/enterprise');\ncy.go('back');\ndashboardPageobj.trustedByProfessionalsAcrossIndia.should('be.visible');\n// dashboardPageobj.moolForEveryOneLogo.should('be.visible')\ndashboardPageobj.safeAndSeamless.should('be.visible');\ndashboardPageobj.secureDataStorage.should('be.visible');\ndashboardPageobj.gouravMalhotra.should('be.visible');\ndashboardPageobj.weAreHereToSupportYou.should('be.visible');\ndashboardPageobj.subscribeToNewsletter.should('be.visible');\ndashboardPageobj.moolLogoFooter.should('be.visible');\ndashboardPageobj.footer.should('be.visible');",
+              "err": {},
+              "uuid": "82f68edf-3e14-4cf2-80a3-be6306156ecf",
+              "parentUUID": "ee861c0e-0b5c-46ce-bab4-ba8ed3ae7ded",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b5d5c0a5-ae07-46a7-8202-973936bd4ba1",
+            "82f68edf-3e14-4cf2-80a3-be6306156ecf"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17818,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

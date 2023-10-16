@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-16T08:05:21.486Z",
+    "end": "2023-10-16T08:05:33.633Z",
+    "duration": 12147,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9eb505d5-9975-406c-acba-fe99c9b38b0a",
+      "title": "",
+      "fullFile": "cypress/e2e/allCalculator/LoanCalculators/loanEmiCalculator.cy.js",
+      "file": "cypress/e2e/allCalculator/LoanCalculators/loanEmiCalculator.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "41f7b17b-3219-4bd2-83bc-f662db8c5a19",
+          "title": "Loan Emi Calculator",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check all the links of the page",
+              "fullTitle": "Loan Emi Calculator Check all the links of the page",
+              "timedOut": null,
+              "duration": 9261,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').each(link => {\n  if (link.prop('href')) {\n    cy.request({\n      url: link.prop('href'),\n      failOnStatusCode: false,\n      timeout: 10000\n    });\n  }\n});",
+              "err": {},
+              "uuid": "3b710a03-c405-4b30-b2e9-64bdc3fd0cc2",
+              "parentUUID": "41f7b17b-3219-4bd2-83bc-f662db8c5a19",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Calculate the Loan Emi",
+              "fullTitle": "Loan Emi Calculator Calculate the Loan Emi",
+              "timedOut": null,
+              "duration": 1851,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const loanEmiCalculatorPageObj = new _loanEmiCalculatorPage.default();\nloanEmiCalculatorPageObj.loanAmount.type('{selectall}{backspace}');\nloanEmiCalculatorPageObj.loanAmount.type('{moveToEnd}');\nloanEmiCalculatorPageObj.loanAmount.type('860000');\nloanEmiCalculatorPageObj.loanInterestRate.type('{selectall}{backspace}');\nloanEmiCalculatorPageObj.loanInterestRate.type('{moveToEnd}');\nloanEmiCalculatorPageObj.loanInterestRate.type('8.6');\nloanEmiCalculatorPageObj.loanTenure.type('{selectall}{backspace}');\nloanEmiCalculatorPageObj.loanTenure.type('{moveToEnd}');\nloanEmiCalculatorPageObj.loanTenure.type('84');\ncy.xpath(`(//div[normalize-space()='13663'])[1]`).as('MonthlyEmi').should('have.text', '13663');\ncy.xpath(`(//div[normalize-space()='860000'])[1]`).as('PrincipleAmount').should('have.text', '860000');\ncy.xpath(`(//div[normalize-space()='1147664'])[1]`).as('TotalAmount').should('have.text', '1147664');",
+              "err": {},
+              "uuid": "2616d38a-cb36-4c2a-a876-2d5e560b3d01",
+              "parentUUID": "41f7b17b-3219-4bd2-83bc-f662db8c5a19",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3b710a03-c405-4b30-b2e9-64bdc3fd0cc2",
+            "2616d38a-cb36-4c2a-a876-2d5e560b3d01"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11112,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

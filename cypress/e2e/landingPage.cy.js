@@ -46,6 +46,18 @@ describe("Website", ()=>{
     cy.url().should('eq','https://www.moolfinance.com/enterprise')
     cy.go('back')
 
+    dashboardPageobj.trustedByProfessionalsAcrossIndia.should('be.visible')
+
+    // dashboardPageobj.moolForEveryOneLogo.should('be.visible')
+    dashboardPageobj.safeAndSeamless.should('be.visible')
+    dashboardPageobj.secureDataStorage.should('be.visible')
+    dashboardPageobj.gouravMalhotra.should('be.visible')
+    dashboardPageobj.weAreHereToSupportYou.should('be.visible')
+    dashboardPageobj.subscribeToNewsletter.should('be.visible')
+    dashboardPageobj.moolLogoFooter.should('be.visible')
+    dashboardPageobj.footer.should('be.visible')
+
+
 
 
 

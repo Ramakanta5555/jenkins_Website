@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-16T08:10:31.145Z",
+    "end": "2023-10-16T08:10:53.939Z",
+    "duration": 22794,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d483d62f-a322-4b99-827c-ff7de5dcaf18",
+      "title": "",
+      "fullFile": "cypress/e2e/allCalculator/oldVsNewTaxRegimeCalculator.cy.js",
+      "file": "cypress/e2e/allCalculator/oldVsNewTaxRegimeCalculator.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a01cd2a1-6bdd-47df-82fd-7f1dca8d3862",
+          "title": "Old Vs New Tax Regime Calculator",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check all the links of the page",
+              "fullTitle": "Old Vs New Tax Regime Calculator Check all the links of the page",
+              "timedOut": null,
+              "duration": 11094,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').each(link => {\n  if (link.prop('href')) {\n    cy.request({\n      url: link.prop('href'),\n      failOnStatusCode: false,\n      timeout: 10000\n    });\n  }\n});",
+              "err": {},
+              "uuid": "79f2a444-fd80-4195-81f6-ad9f475e288b",
+              "parentUUID": "a01cd2a1-6bdd-47df-82fd-7f1dca8d3862",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Calculate the Tax with Max Declaration",
+              "fullTitle": "Old Vs New Tax Regime Calculator Calculate the Tax with Max Declaration",
+              "timedOut": null,
+              "duration": 10586,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const oldVsNewTaxRegimeCalculatorPageObj = new _oldVsNewTaxRegimeCalculatorPage.default();\noldVsNewTaxRegimeCalculatorPageObj.ctc.type('{moveToEnd}');\noldVsNewTaxRegimeCalculatorPageObj.ctc.type('1500000');\noldVsNewTaxRegimeCalculatorPageObj.basic.type('{moveToEnd}');\noldVsNewTaxRegimeCalculatorPageObj.basic.type('60000');\noldVsNewTaxRegimeCalculatorPageObj.hra.type('{moveToEnd}');\noldVsNewTaxRegimeCalculatorPageObj.hra.type('30000');\noldVsNewTaxRegimeCalculatorPageObj.salaryInfoNext.click();\noldVsNewTaxRegimeCalculatorPageObj.personalInfoNext.click();\noldVsNewTaxRegimeCalculatorPageObj.rentPaid.type('{moveToEnd}');\noldVsNewTaxRegimeCalculatorPageObj.rentPaid.type('25000');\noldVsNewTaxRegimeCalculatorPageObj.housingNext.click();\noldVsNewTaxRegimeCalculatorPageObj.incomeConfigNext.click();\n//Add Food Allowances\noldVsNewTaxRegimeCalculatorPageObj.alllowances.click();\noldVsNewTaxRegimeCalculatorPageObj.foodAllowances.click();\n// oldVsNewTaxRegimeCalculatorPageObj.allowancesValueField.type('{moveToEnd}')\noldVsNewTaxRegimeCalculatorPageObj.allowancesValueField.type('2500');\noldVsNewTaxRegimeCalculatorPageObj.allowancesAdd.click();\n//LTA \noldVsNewTaxRegimeCalculatorPageObj.alllowances.click();\noldVsNewTaxRegimeCalculatorPageObj.lta.click();\noldVsNewTaxRegimeCalculatorPageObj.allowancesValueField.type('{moveToEnd}');\noldVsNewTaxRegimeCalculatorPageObj.allowancesValueField.type('8000');\noldVsNewTaxRegimeCalculatorPageObj.allowancesAdd.click();\n//Child Education Alloowances\noldVsNewTaxRegimeCalculatorPageObj.alllowances.click();\noldVsNewTaxRegimeCalculatorPageObj.childEducationAllowances.click();\noldVsNewTaxRegimeCalculatorPageObj.allowancesValueField.type('{moveToEnd}');\noldVsNewTaxRegimeCalculatorPageObj.allowancesValueField.type('300');\noldVsNewTaxRegimeCalculatorPageObj.allowancesAdd.click();\n//Hostel Expenditure Allowances\noldVsNewTaxRegimeCalculatorPageObj.alllowances.click();\noldVsNewTaxRegimeCalculatorPageObj.hostelExpenditureAllowances.click();\noldVsNewTaxRegimeCalculatorPageObj.allowancesValueField.type('{moveToEnd}');\noldVsNewTaxRegimeCalculatorPageObj.allowancesValueField.type('600');\noldVsNewTaxRegimeCalculatorPageObj.allowancesAdd.click();\noldVsNewTaxRegimeCalculatorPageObj.alllowancesNext.click();\noldVsNewTaxRegimeCalculatorPageObj.declarationSubmit.click();\ncy.xpath(`(//p[contains(@class,'font-semibold text-[#101828] text-[16px]')][normalize-space()='1,500,000'])[1]`).as('TotalCTC').should('have.text', '1,500,000');\ncy.xpath(`(//p[contains(@class,'font-semibold text-[#101828] text-[16px]')][normalize-space()='120,314'])[1]`).as('grossPerMonth').should('have.text', '120,314');\ncy.xpath(`(//p[contains(@class,'font-semibold text-[#101828] text-[16px]')][normalize-space()='60,000'])[1]`).as('basicPerMonth').should('have.text', '60,000');\ncy.xpath(`(//p[contains(@class,'font-semibold text-[#101828] text-[16px]')][normalize-space()='30,000'])[1]`).as('hraPerMonth').should('have.text', '30,000');\ncy.get(`body > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(5) > td:nth-child(2) > p:nth-child(1)`).as('nonTaxableAllowances').should('have.text', '11,300');\ncy.get(`body > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(6) > td:nth-child(2) > p:nth-child(1)`).as('specialAllowances').should('have.text', '18,914');\ncy.xpath(`(//p[contains(text(),'1,800')])[1]`).as('employerPF').should('have.text', '1,800');\ncy.xpath(`(//p[contains(text(),'1,800')])[3]`).as('employeePF').should('have.text', '1,800');\ncy.xpath(`(//p[contains(@class,'font-semibold text-[#101828] text-[16px]')][normalize-space()='2,886'])[1]`).as('gratuityPerMonth').should('have.text', '2,886');\ncy.xpath(`(//p[contains(@class,'font-semibold text-[#101828] text-[16px]')][normalize-space()='200'])[1]`).as('ptPerMonth').should('have.text', '200');\ncy.get(`body > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(11) > td:nth-child(2) > p:nth-child(1)`).as('tdsPerMonth').should('have.text', '1,738');\ncy.get(`body > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(12) > td:nth-child(2) > p:nth-child(1)`).as('netSalaryPerMonth').should('have.text', '116,576');\ncy.get(`body > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(13) > td:nth-child(2) > p:nth-child(1)`).as('balanceCash').should('have.text', '1,210,512');",
+              "err": {},
+              "uuid": "ffb39ef6-f2b7-44d5-84fe-7ea33afcad31",
+              "parentUUID": "a01cd2a1-6bdd-47df-82fd-7f1dca8d3862",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "79f2a444-fd80-4195-81f6-ad9f475e288b",
+            "ffb39ef6-f2b7-44d5-84fe-7ea33afcad31"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21680,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

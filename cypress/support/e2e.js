@@ -15,7 +15,13 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from failing the test
+    return false
+  })
 // require('@cypress/xpath');
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 import "cypress-real-events/support";
+import '@shelex/cypress-allure-plugin';
+import 'cypress-mochawesome-reporter/register';

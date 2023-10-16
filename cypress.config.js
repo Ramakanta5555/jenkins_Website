@@ -1,7 +1,12 @@
 const { defineConfig } = require("cypress");
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
   e2e: {
+    setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on);
+      },
     defaultCommandTimeout: 60000,
     pageLoadTimeout: 90000,
     chromeWebSecurity: false,
@@ -12,7 +17,8 @@ module.exports = defineConfig({
     viewportWidth: 1440,
     viewportHeight: 900,
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      allureWriter(on, config);
+            return config;
     },
   },
 });

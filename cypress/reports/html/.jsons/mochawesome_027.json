@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-16T08:11:40.045Z",
+    "end": "2023-10-16T08:11:54.786Z",
+    "duration": 14741,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "db84e0f4-ea79-4957-a429-d882fe20ff4f",
+      "title": "",
+      "fullFile": "cypress/e2e/allCalculator/GovermentSchemeCalculators/ppfCalculator.cy.js",
+      "file": "cypress/e2e/allCalculator/GovermentSchemeCalculators/ppfCalculator.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dec3a7a7-e5a2-40c3-9347-568e9cdd259c",
+          "title": "PPF Calculator",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check all the links of the page",
+              "fullTitle": "PPF Calculator Check all the links of the page",
+              "timedOut": null,
+              "duration": 9113,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').each(link => {\n  if (link.prop('href')) {\n    cy.request({\n      url: link.prop('href'),\n      failOnStatusCode: false,\n      timeout: 10000\n    });\n  }\n});",
+              "err": {},
+              "uuid": "c18fa535-d344-4bf4-abe4-86ddced66020",
+              "parentUUID": "dec3a7a7-e5a2-40c3-9347-568e9cdd259c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Pf Calculation with investment of 5600",
+              "fullTitle": "PPF Calculator Pf Calculation with investment of 5600",
+              "timedOut": null,
+              "duration": 2273,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const ppfCalculatorPageObj = new _ppfCalculatorPage.default();\nppfCalculatorPageObj.ppfInvestment.type('{selectall}{backspace}');\nppfCalculatorPageObj.ppfInvestment.type('{moveToEnd}');\nppfCalculatorPageObj.ppfInvestment.type('5600');\ncy.xpath(`(//div[normalize-space()='84000'])[1]`).should('have.text', '84000');\ncy.xpath(`(//div[contains(text(),'80216')])[1]`).should('have.text', '80216');\ncy.xpath(`(//div[normalize-space()='164216'])[1]`).should('have.text', '164216');",
+              "err": {},
+              "uuid": "84f0978d-aa5a-4c91-b2ee-c704f121eec9",
+              "parentUUID": "dec3a7a7-e5a2-40c3-9347-568e9cdd259c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Pf Calculation with investment of 49000",
+              "fullTitle": "PPF Calculator Pf Calculation with investment of 49000",
+              "timedOut": null,
+              "duration": 2277,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const ppfCalculatorPageObj = new _ppfCalculatorPage.default();\nppfCalculatorPageObj.ppfInvestment.type('{selectall}{backspace}');\nppfCalculatorPageObj.ppfInvestment.type('{moveToEnd}');\nppfCalculatorPageObj.ppfInvestment.type('49000');\ncy.xpath(`(//div[normalize-space()='735000'])[1]`).should('have.text', '735000');\ncy.xpath(`(//div[contains(text(),'701890')])[1]`).should('have.text', '701890');\ncy.xpath(`(//div[normalize-space()='1436890'])[1]`).should('have.text', '1436890');",
+              "err": {},
+              "uuid": "dd4e2897-6611-465c-a7c4-231539808ed9",
+              "parentUUID": "dec3a7a7-e5a2-40c3-9347-568e9cdd259c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c18fa535-d344-4bf4-abe4-86ddced66020",
+            "84f0978d-aa5a-4c91-b2ee-c704f121eec9",
+            "dd4e2897-6611-465c-a7c4-231539808ed9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13663,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

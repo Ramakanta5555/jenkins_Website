@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-16T08:03:44.638Z",
+    "end": "2023-10-16T08:03:58.492Z",
+    "duration": 13854,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "11ebec8f-c120-4f5a-b405-f62c4289cf11",
+      "title": "",
+      "fullFile": "cypress/e2e/allCalculator/InvestmentCalculators/rdCalculator.cy.js",
+      "file": "cypress/e2e/allCalculator/InvestmentCalculators/rdCalculator.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d735205f-cf35-4853-a89a-3ff0817352d0",
+          "title": "RD Calculator",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check all links on the Page",
+              "fullTitle": "RD Calculator Check all links on the Page",
+              "timedOut": null,
+              "duration": 9644,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').each(link => {\n  if (link.prop('href')) {\n    cy.request({\n      url: link.prop('href'),\n      failOnStatusCode: false,\n      timeout: 10000\n    });\n  }\n});",
+              "err": {},
+              "uuid": "04c14f27-45e4-4af2-9814-31dc1753600f",
+              "parentUUID": "d735205f-cf35-4853-a89a-3ff0817352d0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Calcuaation of RD Calculator",
+              "fullTitle": "RD Calculator Calcuaation of RD Calculator",
+              "timedOut": null,
+              "duration": 3160,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const rdCalculatorPageObj = new _rdCalculatorPage.default();\nrdCalculatorPageObj.investmentAmount.type('{selectall}{backspace}');\nrdCalculatorPageObj.investmentAmount.type('{moveToEnd}');\nrdCalculatorPageObj.investmentAmount.type('10000');\nrdCalculatorPageObj.roi.type('{selectall}{backspace}');\nrdCalculatorPageObj.roi.type('{moveToEnd}');\nrdCalculatorPageObj.roi.type('11.34');\nrdCalculatorPageObj.timePeriodYears.type('{selectall}{backspace}');\nrdCalculatorPageObj.timePeriodYears.type('{moveToEnd}');\nrdCalculatorPageObj.timePeriodYears.type('9');\ncy.xpath(`(//div[normalize-space()='1080000'])[1]`).should('have.text', '1080000');\ncy.xpath(`(//div[contains(text(),'801736')])[1]`).should('have.text', '801736');\ncy.xpath(`(//div[normalize-space()='1881736'])[1]`).should('have.text', '1881736');",
+              "err": {},
+              "uuid": "d5ff113a-355d-42e3-a4ed-74a70610ef4c",
+              "parentUUID": "d735205f-cf35-4853-a89a-3ff0817352d0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "04c14f27-45e4-4af2-9814-31dc1753600f",
+            "d5ff113a-355d-42e3-a4ed-74a70610ef4c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12804,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

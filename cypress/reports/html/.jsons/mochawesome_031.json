@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-16T08:12:41.344Z",
+    "end": "2023-10-16T08:12:57.257Z",
+    "duration": 15913,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2bf1325c-715e-4ee3-b6c2-42e777cf6944",
+      "title": "",
+      "fullFile": "cypress/e2e/allCalculator/InvestmentCalculators/sipCalculator.cy.js",
+      "file": "cypress/e2e/allCalculator/InvestmentCalculators/sipCalculator.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "85ce6e4c-0003-4862-978a-f5e8a086ebcc",
+          "title": "SIP Calculator",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "check all links of the page",
+              "fullTitle": "SIP Calculator check all links of the page",
+              "timedOut": null,
+              "duration": 10119,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').each(link => {\n  if (link.prop('href')) {\n    cy.request({\n      url: link.prop('href'),\n      failOnStatusCode: false,\n      timeOut: 10000\n    });\n    cy.log(link.prop('href'));\n  }\n});",
+              "err": {},
+              "uuid": "55e523ab-ff26-4d82-969c-15f37464d2d8",
+              "parentUUID": "85ce6e4c-0003-4862-978a-f5e8a086ebcc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Calculatte SIP with 3 years and 10% ROI",
+              "fullTitle": "SIP Calculator Calculatte SIP with 3 years and 10% ROI",
+              "timedOut": null,
+              "duration": 4741,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const sipCalculatorPageObj = new _sipCalculatorPage.default();\nsipCalculatorPageObj.sipinvestment.click();\nsipCalculatorPageObj.sipinvestment.type('{selectall}{backspace}');\ncy.wait(2000);\nsipCalculatorPageObj.sipinvestment.type('10000');\nsipCalculatorPageObj.roi.type('{selectall}{backspace}');\nsipCalculatorPageObj.roi.type('{moveToEnd}');\nsipCalculatorPageObj.roi.type('22');\nsipCalculatorPageObj.timePeriodYears.type('{selectall}{backspace}');\nsipCalculatorPageObj.timePeriodYears.type('{moveToEnd}');\nsipCalculatorPageObj.timePeriodYears.type('3');\ncy.xpath(`(//div[normalize-space()='3600000'])[1]`).should('have.text', '3600000');\ncy.xpath(`(//div[contains(text(),'1528303')])[1]`).should('have.text', '1528303');\ncy.xpath(`(//div[normalize-space()='5128303'])[1]`).should('have.text', '5128303');",
+              "err": {},
+              "uuid": "1b757fbb-f9f6-4daa-aacb-b262d72e7c7c",
+              "parentUUID": "85ce6e4c-0003-4862-978a-f5e8a086ebcc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "55e523ab-ff26-4d82-969c-15f37464d2d8",
+            "1b757fbb-f9f6-4daa-aacb-b262d72e7c7c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14860,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

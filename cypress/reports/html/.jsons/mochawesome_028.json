@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-16T08:11:55.777Z",
+    "end": "2023-10-16T08:12:12.572Z",
+    "duration": 16795,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "faed4021-b86b-4804-8217-d40858a8cf94",
+      "title": "",
+      "fullFile": "cypress/e2e/allCalculator/InvestmentCalculators/fixedDepositeCalculator.cy.js",
+      "file": "cypress/e2e/allCalculator/InvestmentCalculators/fixedDepositeCalculator.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d2f89e66-49ff-463d-b5aa-6faa9fecd98c",
+          "title": "Fixed Desposite Calculators",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Fixed Disposeite calculation with invest Amount 200001, without selecting the month",
+              "fullTitle": "Fixed Desposite Calculators Fixed Disposeite calculation with invest Amount 200001, without selecting the month",
+              "timedOut": null,
+              "duration": 3101,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const fixedDepositeCalculatorPageObj = new _fixedDepositeCalculatorPage.default();\nfixedDepositeCalculatorPageObj.fixDespositeInvestmentAmount.click();\nfor (let n = 0; n < 6; n++) {\n  fixedDepositeCalculatorPageObj.fixDespositeInvestmentAmount.type('{backspace}');\n}\nfixedDepositeCalculatorPageObj.fixDespositeInvestmentAmount.type('20000');\nfixedDepositeCalculatorPageObj.fixDespositeExpectedAnnualReturnRate.type('{selectall}{backspace}');\nfixedDepositeCalculatorPageObj.fixDespositeExpectedAnnualReturnRate.type('8.9');\nfixedDepositeCalculatorPageObj.fixDespositeYear.type('{selectall}{backspace}');\nfixedDepositeCalculatorPageObj.fixDespositeYear.type('1');\n// fixedDepositeCalculatorPageObj.fixDespositeMonth.select('2',{setTimeout:2000})\nfixedDepositeCalculatorPageObj.fixDespositeInvestmentAmount.should('have.value', '200001');\nfixedDepositeCalculatorPageObj.fixedDepositeEstimatedReturns.should('have.text', '269148');\nfixedDepositeCalculatorPageObj.fixedDepositeReturnAmount.should('have.text', '469149');",
+              "err": {},
+              "uuid": "58592701-c31a-4e9d-b2d9-ca160aafaf05",
+              "parentUUID": "d2f89e66-49ff-463d-b5aa-6faa9fecd98c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fixed Disposeite calculation with invest Amount 200001, with the month",
+              "fullTitle": "Fixed Desposite Calculators Fixed Disposeite calculation with invest Amount 200001, with the month",
+              "timedOut": null,
+              "duration": 2833,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const fixedDepositeCalculatorPageObj = new _fixedDepositeCalculatorPage.default();\nfixedDepositeCalculatorPageObj.fixDespositeExpectedAnnualReturnRate.type('{selectall}{backspace}');\nfixedDepositeCalculatorPageObj.fixDespositeExpectedAnnualReturnRate.type('8.9');\nfixedDepositeCalculatorPageObj.fixDespositeYear.type('{selectall}{backspace}');\nfixedDepositeCalculatorPageObj.fixDespositeYear.type('1');\ncy.get(`div[role='combobox']`).click();\ncy.xpath(`(//li[normalize-space()='5'])[1]`).click();\nfixedDepositeCalculatorPageObj.fixDespositeInvestmentAmount.should('have.value', '100000');\ncy.xpath(`(//div[contains(text(),'143056')])[1]`).should('have.text', '143056');\ncy.xpath(`(//div[normalize-space()='243056'])[1]`).should('have.text', '243056');",
+              "err": {},
+              "uuid": "2d130826-e740-4866-bde4-fba75f9a25b0",
+              "parentUUID": "d2f89e66-49ff-463d-b5aa-6faa9fecd98c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "check all links of the page",
+              "fullTitle": "Fixed Desposite Calculators check all links of the page",
+              "timedOut": null,
+              "duration": 9803,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').each(link => {\n  if (link.prop('href')) {\n    cy.request({\n      url: link.prop('href'),\n      failOnStatusCode: false,\n      timeOut: 10000\n    });\n    cy.log(link.prop('href'));\n  }\n});",
+              "err": {},
+              "uuid": "2ddebe88-3194-44c1-959a-7577ba4ad8de",
+              "parentUUID": "d2f89e66-49ff-463d-b5aa-6faa9fecd98c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "58592701-c31a-4e9d-b2d9-ca160aafaf05",
+            "2d130826-e740-4866-bde4-fba75f9a25b0",
+            "2ddebe88-3194-44c1-959a-7577ba4ad8de"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15737,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

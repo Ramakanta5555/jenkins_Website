@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-16T08:11:11.322Z",
+    "end": "2023-10-16T08:11:25.328Z",
+    "duration": 14006,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9f8a9e85-f1db-4592-929e-a63eb334107a",
+      "title": "",
+      "fullFile": "cypress/e2e/allCalculator/GovermentSchemeCalculators/npsCalculator.cy.js",
+      "file": "cypress/e2e/allCalculator/GovermentSchemeCalculators/npsCalculator.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d6887fd6-9f62-4ab9-8b84-bab0cede563b",
+          "title": "NPS Calculator",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "check all links of the page",
+              "fullTitle": "NPS Calculator check all links of the page",
+              "timedOut": null,
+              "duration": 9192,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a').each(link => {\n  if (link.prop('href')) {\n    cy.request({\n      url: link.prop('href'),\n      failOnStatusCode: false,\n      timeOut: 10000\n    });\n    cy.log(link.prop('href'));\n  }\n});",
+              "err": {},
+              "uuid": "130168ea-2b46-4c31-8a36-75bd29f5a44e",
+              "parentUUID": "d6887fd6-9f62-4ab9-8b84-bab0cede563b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Calculation of NPS",
+              "fullTitle": "NPS Calculator Calculation of NPS",
+              "timedOut": null,
+              "duration": 3748,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const npsCalculatorPageObj = new _npsCalculatorPage.default();\nnpsCalculatorPageObj.npsInvestment.type('{selectall}{backspace}');\nnpsCalculatorPageObj.npsInvestment.type('{moveToEnd}');\nnpsCalculatorPageObj.npsInvestment.type('9000');\nnpsCalculatorPageObj.npsROI.type('{selectall}{backspace}');\nnpsCalculatorPageObj.npsROI.type('{moveToEnd}');\nnpsCalculatorPageObj.npsROI.type('6.88');\nnpsCalculatorPageObj.npsCurremtAge.type('{selectall}{backspace}');\nnpsCalculatorPageObj.npsCurremtAge.type('{moveToEnd}');\nnpsCalculatorPageObj.npsCurremtAge.type('26');\nnpsCalculatorPageObj.npsAnnuity.type('{selectall}{backspace}');\nnpsCalculatorPageObj.npsAnnuity.type('{moveToEnd}');\nnpsCalculatorPageObj.npsAnnuity.type('65');\nnpsCalculatorPageObj.npsExpectesAnnuityRate.type('{selectall}{backspace}');\nnpsCalculatorPageObj.npsExpectesAnnuityRate.type('{moveToEnd}');\nnpsCalculatorPageObj.npsExpectesAnnuityRate.type('7');\ncy.xpath(`(//p[normalize-space()='3672000'])[1]`).should('have.text', '3672000');\ncy.xpath(`(//p[normalize-space()='14688651'])[1]`).should('have.text', '14688651');\ncy.xpath(`(//p[normalize-space()='9547623'])[1]`).should('have.text', '9547623');\ncy.xpath(`(//p[normalize-space()='59332'])[1]`).should('have.text', '59332');\ncy.xpath(`(//p[normalize-space()='5141028'])[1]`).should('have.text', '5141028');",
+              "err": {},
+              "uuid": "4d00d18c-f288-4fbb-9e25-57a8d11044af",
+              "parentUUID": "d6887fd6-9f62-4ab9-8b84-bab0cede563b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "130168ea-2b46-4c31-8a36-75bd29f5a44e",
+            "4d00d18c-f288-4fbb-9e25-57a8d11044af"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12940,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
